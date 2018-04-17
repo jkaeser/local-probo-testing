@@ -14,5 +14,3 @@ steps:
       - mysql --version
       - php -v
       - apache2 -v
-      mysqlCnfOptions:
-        max_allowed_packet: 24M
