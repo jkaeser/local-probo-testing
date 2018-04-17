@@ -1,10 +1,6 @@
-image: proboci/ubuntu-16.04-lamp:php-7.2
+image: proboci/ubuntu-16.04-lamp:php7.2-nightly
 steps:
-  - name: Probo site setup.
-    plugin: LAMPApp
-    databaseName: mydb
-    databaseUser: mydbuser
-  - name: Check versions..
+  - name: Check versions.
     plugin: Script
     script:
       - echo "checking bower version..."
