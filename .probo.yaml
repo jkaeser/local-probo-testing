@@ -4,7 +4,7 @@ steps:
     plugin: LAMPApp
     databaseName: mydb
     databaseUser: mydbuser
-  - name: Check versions.
+  - name: Check versions..
     plugin: Script
     script:
       - echo "checking bower version..."
