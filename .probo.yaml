@@ -1,18 +1,14 @@
 image: proboci/ubuntu-16.04-lamp:php7.2-nightly
-mysqlCnfOptions:
-  max_allowed_packet: 24M
+assets:
+  - concrete5demo-2018-04-17.sql.gz
 steps:
-  - name: Check versions..
-    plugin: Script
-    script:
-      - echo "checking bower version..."
-      - bower -version --allow-root
-      - echo "checking grunt version..."
-      - grunt -version
-      - echo "checking gulp version..."
-      - gulp -v
-      - echo "checking yarn version..."
-      - yarn --version
-      - mysql --version
-      - php -v
-      - apache2 -v
+  - name: Probo Concrete5 LAMP site setup
+    plugin: LAMPApp
+    database: concrete5demo-2018-04-17.sql.gz
+    databaseName: concrete5demo
+    databaseUser: concrete5demo
+    databaseGzipped: true
+    phpIniOptions:
+      upload_max_filesize: 25M
+      post_max_size: 25M
+      memory_limit: 256M
