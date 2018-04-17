@@ -1,4 +1,6 @@
 image: proboci/ubuntu-16.04-lamp:php7.2-nightly
+mysqlCnfOptions:
+  max_allowed_packet: 24M
 steps:
   - name: Check versions..
     plugin: Script
