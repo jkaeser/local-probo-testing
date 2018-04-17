@@ -18,7 +18,3 @@ steps:
       - mysql --version
       - php -v
       - apache2 -v
-  - name: Generate login link.
-    command: "drush --root='/var/www/html/' uli"
-  - name: Check fileProxy settings.
-    command: "drush --root='/var/www/html/' drush vget stage_*"
