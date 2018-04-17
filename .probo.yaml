@@ -1,0 +1,26 @@
+image: proboci/ubuntu-16.04-lamp:php-7.2
+steps:
+  - name: Probo site setup
+    plugin: LAMPApp
+    database: mydb.sql.gz
+    databaseName: mydb
+    databaseUser: mydbuser
+    databaseGzipped: true
+  - name: Check versions.
+    plugin: Script
+    script:
+      - echo "checking bower version..."
+      - bower -version --allow-root
+      - echo "checking grunt version..."
+      - grunt -version
+      - echo "checking gulp version..."
+      - gulp -v
+      - echo "checking yarn version..."
+      - yarn --version
+      - mysql --version
+      - php -v
+      - apache2 -v
+  - name: Generate login link.
+    command: "drush --root='/var/www/html/' uli"
+  - name: Check fileProxy settings.
+    command: "drush --root='/var/www/html/' drush vget stage_*"
