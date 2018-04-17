@@ -2,7 +2,7 @@ image: proboci/ubuntu-16.04-lamp:php7.2-nightly
 assets:
   - concrete5demo-2018-04-17.sql.gz
 steps:
-  - name: Probo Concrete5 LAMP site setup
+  - name: Probo Concrete5 LAMP site setup.
     plugin: LAMPApp
     database: concrete5demo-2018-04-17.sql.gz
     databaseName: concrete5demo
